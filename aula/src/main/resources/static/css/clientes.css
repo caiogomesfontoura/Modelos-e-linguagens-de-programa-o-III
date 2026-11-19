@@ -1,0 +1,253 @@
+/* Cores e medidas usadas na página: preto e branco */
+:root {
+    --fundo: #ffffff;
+    --cartao: #ffffff;
+    --texto: #000000;
+    --texto-suave: #555555;
+    --borda: #000000;
+    --borda-suave: #d4d4d4;
+    --primaria: #000000;
+    --primaria-hover: #333333;
+    --sobre-primaria: #ffffff;
+    --perigo: #000000;
+    --perigo-hover: #000000;
+    --erro-fundo: #f2f2f2;
+    --linha-hover: #f2f2f2;
+    --raio: 0;
+    --sombra: 4px 4px 0 #000000;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+}
+
+.pagina {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 16px;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    margin-bottom: 24px;
+}
+
+.cabecalho h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.subtitulo {
+    margin: 4px 0 0;
+    color: var(--texto-suave);
+}
+
+/* Mensagem de erro (usada quando o serviço recusar um nome) */
+.cabecalho p[style] {
+    margin-top: 16px;
+    padding: 10px 14px;
+    border-left: 4px solid var(--perigo);
+    border-radius: 6px;
+    background: var(--erro-fundo);
+}
+
+/* Cartões */
+.cartao {
+    background: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.cartao h2 {
+    margin: 0 0 14px;
+    font-size: 1.1rem;
+}
+
+/* Campos e botões */
+input[type="text"],
+input[type="search"] {
+    width: 100%;
+    padding: 9px 12px;
+    font: inherit;
+    color: var(--texto);
+    background: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 0;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input[type="text"]:focus,
+input[type="search"]:focus {
+    outline: none;
+    border-color: var(--borda);
+    box-shadow: none;
+}
+
+.botao {
+    padding: 5px 10px;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid var(--borda);
+    border-radius: 0;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s, opacity 0.15s;
+}
+
+.botao:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.botao-primario {
+    background: var(--primaria);
+    color: var(--sobre-primaria);
+}
+
+.botao-primario:hover {
+    background: var(--primaria-hover);
+}
+
+.botao-secundario {
+    background: transparent;
+    color: var(--primaria);
+    border-color: var(--primaria);
+}
+
+.botao-secundario:hover:not(:disabled) {
+    background: var(--primaria);
+    color: var(--sobre-primaria);
+}
+
+/* Excluir: borda tracejada para se diferenciar sem usar cor */
+.botao-perigo {
+    background: transparent;
+    color: var(--perigo);
+    border: 1px dashed var(--perigo);
+}
+
+.botao-perigo:hover {
+    background: var(--perigo);
+    color: var(--sobre-primaria);
+    border-style: solid;
+}
+
+/* Formulários em linha (campo + botão) */
+.form-novo,
+.form-alterar {
+    display: flex;
+    gap: 8px;
+}
+
+.form-excluir {
+    margin: 0;
+}
+
+/* Topo da lista: título, contador e busca */
+.lista-topo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.lista-topo h2 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contador {
+    min-width: 26px;
+    padding: 1px 8px;
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--sobre-primaria);
+    background: var(--primaria);
+    border-radius: 999px;
+}
+
+.busca {
+    max-width: 260px;
+}
+
+/* Tabela */
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela th {
+    padding: 10px 8px;
+    text-align: left;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--texto-suave);
+    border-bottom: 2px solid var(--borda);
+}
+
+.tabela td {
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--borda-suave);
+    vertical-align: middle;
+}
+
+.tabela tbody tr:hover {
+    background: var(--linha-hover);
+}
+
+.col-id {
+    width: 60px;
+    color: var(--texto-suave);
+}
+
+.col-acoes {
+    width: 110px;
+    text-align: right;
+}
+
+.vazio {
+    padding: 28px 8px;
+    text-align: center;
+    color: var(--texto-suave);
+}
+
+.oculto {
+    display: none;
+}
+
+/* Telas pequenas (celular) */
+@media (max-width: 560px) {
+    .pagina {
+        padding: 24px 16px;
+    }
+
+    .busca {
+        max-width: none;
+    }
+
+    .form-novo,
+    .form-alterar {
+        flex-direction: column;
+    }
+
+    .col-id {
+        display: none;
+    }
+}
