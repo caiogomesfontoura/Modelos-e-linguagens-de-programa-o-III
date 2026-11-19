@@ -1,6 +1,6 @@
-# Nome do Projeto
+# Cadastro de Clientes
 
-> Crud com Spring Boot, para web. Basicamente é uma interface que permite cadastrar um equipamento da empresa, para conotrole.
+> Sistema web em Spring Boot para cadastrar, listar, alterar e excluir clientes, pensado para pequenos comércios e prestadores de serviço.
 
 ![Java](https://img.shields.io/badge/Java-17%2B-orange)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.2-brightgreen)
@@ -8,10 +8,8 @@
 
 ## Sobre o projeto
 
-Explique em um ou dois parágrafos:
-
-- **O que é:** que problema o sistema resolve ou que funcionalidade ele entrega (por exemplo, "cadastro de clientes com listagem, inclusão, alteração e exclusão").
-- **Para quem:** quem usaria o sistema.
+- **O que é:** um sistema web de cadastro de clientes que permite listar, incluir, alterar e excluir clientes pelo navegador. Os dados ficam gravados em um banco MySQL, e o nome do cliente é validado antes de ser salvo: é obrigatório, precisa ter pelo menos 3 letras e não pode ter números.
+- **Para quem:** pequenos comércios e prestadores de serviço que precisam manter uma lista simples e organizada dos seus clientes.
 - **Por que foi feito:** trabalho do 2º bimestre de Modelos e Linguagem de Programação III, Multivix Vitória, 2026/2.
 
 ## Equipe
